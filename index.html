@@ -1,103 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="index.css">
+  <title>warmglow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logos/wgsmall.png">
 </head>
-
 <body>
-<nav>
-<!-- site navigation -->
-<a href="#about"><h1>warmglow</h1></a>
-<a href="#art"><img SRC="logos/paintbrush.gif" class=sectionLogo> <h1>  art </h1></a>
-<a href="#music"><img SRC="logos/musicnote.gif" class=sectionLogo> <h1> music  </h1></a>
-<a href="#games"><img SRC="logos/controller.gif" class=sectionLogo> <h1>games  </h1></a>
-<a href="#about"><img SRC="logos/questionmark.gif" class=sectionLogo><h1>about</h1></a>
+<div id="app" >
 
-</nav>
+  <nav>
+    <!-- site navigation -->
+    <a href="#about">
+      <h1>warmglow</h1>
+    </a>
+    <a href="#art">
+      <img SRC="logos/paintbrush.gif" class=sectionLogo>
+      <h1>art</h1>
+    </a>
+    <a href="#music">
+      <img SRC="logos/musicnote.gif" class=sectionLogo>
+      <h1>music</h1>
+    </a>
+    <a href="#games"><img SRC="logos/controller.gif" class=sectionLogo>
+      <h1>games</h1>
+    </a>
+    <a href="#about"><img SRC="logos/questionmark.gif" class=sectionLogo>
+      <h1>about</h1>
+    </a>
+  </nav>
 
-<div id="about" class=section>
-<!-- about -->
-<h1>about</h1>
-warmglow small group of people interested in making and promoting art, music, and games.
-</div>
+  <!-- about -->
+  <div id="about" class="section">
+    <h1>about</h1>
+    <p>We are making and promoting art, music, and games.</p>
+  </div>
 
-<div id="art" class=section>
   <!-- art -->
-  <h1>art</h1>
-  <h2> - pixelart</h2>
+  <div id="art" class="section">
+    <h1>art</h1>
 
-<div class = "grid">
-  <div class = "imageContainer art" >
-    <img SRC="pixelart/moon.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
+    <h2> - pixelart</h2>
+    <div class="grid">
+      <art-item
+        v-for="(item, i) in pixelArt"
+        :item="item"
+        :key="i"
+        :folder="'pixelart'"
+        v-on:art-item-clicked="openOverlay"
+      ></art-item>
+    </div>
+
+    <h2> - paintings</h2>
+    <div class="grid">
+      <art-item
+        v-for="(item, i) in paintings"
+        :key="i"
+        :folder="'paintings'"
+        :item="item"
+        v-on:art-item-clicked="openOverlay"
+      ></art-item>
+    </div>
+
+    <h2> - sketches</h2>
+    <img class="art" src="paintings/barn.jpg">
+
   </div>
-  
-  <div class = "imageContainer artlonger">
-    <img SRC="pixelart/CapHill.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
+
+  <!-- music -->
+  <div id="music" class="section">
+    
+    <h1>music</h1>
+
+    <audio controls>
+      <source src="mp3s/CoralFields.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+      <source src="mp3s/Order.mp3" type="audio/mpeg">
+    </audio>
+
   </div>
 
-  <div class = "imageContainer artlong" >
-    <img SRC="pixelart/snowyRedSquare.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
-  </div>
-
-  <div class = "imageContainer artlong" >
-    <img SRC="pixelart/raincaphill.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
-  </div>
-  
-<div class = "imageContainer artlong" >
-    <img SRC="pixelart/FairHaven.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
-</div>
-
-<div class = "imageContainer artlong" >
-    <img SRC="pixelart/garden_st.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
-</div>
-
-<div class = "imageContainer artlong" >
-    <img SRC="pixelart/Esci_rainy.gif">
-    <p class = "imageCaption"> Artist: Ryan Haight </p>
-</div>
-</div>
-
-  <h2> - paintings</h2>
-
-  <img class=art SRC="paintings/barn.jpg">
-
-  <h2> - sketches</h2>
-
-  <img class=art SRC="paintings/barn.jpg">
-
-
-
-</div>
-
-<div id="music" class=section>
   <!-- art -->
-  <h1>music</h1>
-  <audio controls>
-    <source src="mp3s/CoralFields.mp3" type="audio/mpeg">
-
-  </audio>
-  <audio controls>
-
-  <source src="mp3s/Order.mp3" type="audio/mpeg">
-  </audio>
-
+  <div id="games" class=section>
+    <h1>games</h1>
+    <p>Some games goes here</p>
   </div>
 
-<div id="games" class=section>
-  <!-- art -->
-  <h1>games</h1>
-  Some games goes here
+  <modal-overlay
+    v-show="showOverlay"
+    @overlay-clicked="showOverlay = false"
+    :item="overlayItem"
+    :folder="overlayFolder"
+    :ratio="overlayRatio"
+  ></modal-overlay>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>
