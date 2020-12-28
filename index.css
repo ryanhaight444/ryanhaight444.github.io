@@ -11,12 +11,13 @@ a:visited{
   text-decoration: none;
   color:inherit;
 }
+
 p {
-  color: red;
 }
+
 body{
   font-family: Raleway;
-  background-color: blanchedalmond	;
+  /* background-color: blanchedalmond	; */
 
 
 }
@@ -30,21 +31,63 @@ nav{
   margin-left: 150px;
 
 }
-.biglogo{
-  width: 150px;
-}
+
 .art{
-  width: 400px;
-  height: auto;
-  float: center;
+  /* width: 400px; */
+
 }
 .artlong{
-  width: 800px;
-  height: auto;
-  float: center;
+  /* width: 800px; */
+
 }
 .artlonger{
-  width: 1080px;
-  height: auto;
-  float: center;
+  /* width: 1080px; */
+}
+
+.artlongerblurry{
+width: 1080px;
+height: auto;
+float: center;
+}
+
+#art img {
+  /* -webkit-transition: filter 1s ease-in-out; */
+  /* -moz-transition: filter 1s ease-in-out; */
+  /* -o-transition: filter 1s ease-in-out; */
+  transition: filter .3s ease-in-out;
+  width:auto;
+  height:300px;
+}
+
+
+#art img:hover {
+  filter:blur(1px) saturate(30%) opacity(.3);
+}
+
+.imageContainer:hover .imageCaption{
+  opacity: 1;
+}
+
+.imageContainer{
+  position:relative;
+  /* width:200px; */
+  display: flex;
+  align-items: center;
+  margin:0px;
+  justify-content: center;
+}
+
+.imageCaption{
+  font-size: 100%;
+  font-weight: bold;
+  margin:auto;
+  position:absolute;
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.grid{
+  display:flex;
+  flex-wrap: wrap;
 }
