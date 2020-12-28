@@ -94,27 +94,99 @@ var app = new Vue({
         },
         {
           filename: "CapHill.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 1,
+          year: 2020
         },
         {
           filename: "snowyRedSquare.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 1,
+          year: 2020
         },
         {
           filename: "raincaphill.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 10,
+          year: 2020
         },
         {
           filename: "FairHaven.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 9,
+          year: 2020
         },
         {
           filename: "garden_st.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 8,
+          year: 2020
         },
         {
           filename: "Esci_rainy.gif",
-          artist: "Ryan Haight"
+          artist: "Ryan Haight",
+          month: 9,
+          year: 2019
+        },
+        {
+          filename: "CFCrp.gif",
+          artist: "Ryan Haight",
+          month: 9,
+          year: 2020
+        },
+        {
+          filename: "cincinatti_small.gif",
+          artist: "Ryan Haight",
+          month: 2,
+          year: 2020
+        },
+        {
+          filename: "Oldmain.gif",
+          artist: "Ryan Haight",
+          month: 7,
+          year: 2020
+        },
+        {
+          filename: "Vu_final.gif",
+          artist: "Ryan Haight",
+          month: 8,
+          year: 2020
+        },
+        {
+          filename: "PikesPlace.gif",
+          artist: "Ryan Haight",
+          month: 11,
+          year: 2019
+        },
+        {
+          filename: "bakerthe.gif",
+          artist: "Ryan Haight",
+          month: 10,
+          year: 2020
+        },
+        {
+          filename: "vu_front.gif",
+          artist: "Ryan Haight",
+          month: 7,
+          year: 2020
+        },
+        {
+          filename: "red_sqr.gif",
+          artist: "Ryan Haight",
+          month: 4,
+          year: 2020
+        },
+        {
+          filename: "Vancouvie_test.gif",
+          artist: "Ryan Haight",
+          month: 12,
+          year: 2019
+        },
+        {
+          filename: "Stairs.gif",
+          artist: "Ryan Haight",
+          month: 3,
+          year: 2020
         },
       ],
       paintings: [
