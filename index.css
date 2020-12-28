@@ -91,3 +91,17 @@ float: center;
   display:flex;
   flex-wrap: wrap;
 }
+
+nav h1{
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+nav a{
+ display:flex;
+ margin-bottom: 10px;
+ align-items: center;
+}
+.sectionLogo{
+  width: 40px;
+}
