@@ -30,7 +30,9 @@ nav{
   margin-left: 150px;
 
 }
-
+.biglogo{
+  width: 150px;
+}
 .art{
   width: 400px;
   height: auto;
