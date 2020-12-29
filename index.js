@@ -61,12 +61,15 @@ Vue.component('modal-overlay', {
       return offset;
     },
   },
-  template: `<div  id="modal-overlay" @mousemove="onOverlayMove" @click="onOverlayClick">
+  template: `<div  id="modal-overlay">
       <img ref="modalImage" :src="folder !== '' ? folder + '/' + item.filename : ''">
       <div class="metadata" :style="{'margin-left': offset() + 'px'}">
         <p>{{ item.artist }}</p>
         <p>{{ item.year }}</p>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+      <div class="xout" @click="onOverlayClick" >
+        <img SRC="logos/x.gif">
       </div>
     </div>
   </div>`
