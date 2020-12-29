@@ -194,6 +194,14 @@ var app = new Vue({
           filename: "barn.jpg",
           artist: "Sean Haight"
         },
+        {
+          filename: "Rhododendron.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "Colander.jpg",
+          artist: "Sean Haight"
+        },
       ]
     }
   },
