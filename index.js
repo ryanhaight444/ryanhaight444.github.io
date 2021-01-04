@@ -206,7 +206,7 @@ var app = new Vue({
           artist: "Sean Haight"
         },
         {
-          filename: "BakerBeachSun.jpg"
+          filename: "BakerBeachSun.jpg",
           artist: "Sean Haight"
         },
       ]
