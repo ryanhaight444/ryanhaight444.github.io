@@ -9,7 +9,12 @@ Vue.component('art-item', {
   },
   methods: {
   },
-  template: `<div class="imageContainer" @click="$emit('art-item-clicked', [item, folder, ratio])">
+  template: `
+  <div 
+    class="imageContainer" 
+    @click="$emit('art-item-clicked', [item, folder, ratio])"
+    :style="{ 'grid-column': 'span ' + ((item.span) ? item.span : 1) }"
+  >
     <img ref="image" :src="folder + '/' + item.filename">
     <div class="imageCaption">
       <p> {{ item.artist }} </p>
@@ -20,32 +25,21 @@ Vue.component('art-item', {
 
 Vue.component('modal-overlay', {
   props: ['folder', 'item', 'ratio'],
-  computed: {
-    
+  data() {
+    return {
+      storedHeight: 1,
+      storedWidth: 1,
+    }
   },
-  methods: {
-    onOverlayClick() {
-      this.$emit('overlay-clicked');
-    },
-    onOverlayMove() {
-      console.log(this.$refs.modalImage.clientWidth);
-    },
-    width() {
-      if (this.$refs.modalImage !== undefined) {
-        return this.$refs.modalImage.clientWidth;
-      } else {
-        return -1;
-      }
-    },
-    height() {
-      if (this.$refs.modalImage !== undefined) {
-        return this.$refs.modalImage.clientHeight;
-      } else {
-        return -1;
-      }
-    },
+  created() {
+    window.addEventListener("resize", this.updateDimensions);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.updateDimensions);
+  },
+  computed: {
     offset() {
-      let boxRatio = this.width() / this.height();
+      let boxRatio = this.storedWidth / this.storedHeight;
       let resizedWidth;
       let resizedHeight;
       if (this.ratio > boxRatio) {
@@ -61,12 +55,39 @@ Vue.component('modal-overlay', {
       return offset;
     },
   },
+  methods: {
+    onOverlayClick() {
+      this.$emit('overlay-clicked');
+    },
+    onOverlayMove() {
+      console.log(this.$refs.modalImage.clientWidth);
+    },
+    updateDimensions() {
+      this.storedHeight = this.height();
+      this.storedWidth = this.width();
+    },
+    width() {
+      if (this.$refs.modalImage !== undefined) {
+        return this.$refs.modalImage.clientWidth;
+      } else {
+        return -1;
+      }
+    },
+    height() {
+      if (this.$refs.modalImage !== undefined) {
+        return this.$refs.modalImage.clientHeight;
+      } else {
+        return -1;
+      }
+    },
+    
+  },
   template: `<div  id="modal-overlay">
       <img ref="modalImage" :src="folder !== '' ? folder + '/' + item.filename : ''">
-      <div class="metadata" :style="{'margin-left': offset() + 'px'}">
+      <div class="metadata" :style="{'margin-left': offset + 'px'}">
         <p>{{ item.artist }}</p>
         <p>{{ item.year }}</p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>Links go here?</p>
       </div>
       <div class="xout" @click="onOverlayClick" >
         <img SRC="logos/x.gif">
@@ -99,7 +120,8 @@ var app = new Vue({
           filename: "CapHill.gif",
           artist: "Ryan Haight",
           month: 1,
-          year: 2020
+          year: 2020,
+          span: 2,
         },
         {
           filename: "snowyRedSquare.gif",
@@ -147,13 +169,15 @@ var app = new Vue({
           filename: "Oldmain.gif",
           artist: "Ryan Haight",
           month: 7,
-          year: 2020
+          year: 2020,
+          span: 3,
         },
         {
           filename: "Vu_final.gif",
           artist: "Ryan Haight",
           month: 8,
-          year: 2020
+          year: 2020,
+          span: 3,
         },
         {
           filename: "PikesPlace.gif",
@@ -171,19 +195,22 @@ var app = new Vue({
           filename: "vu_front.gif",
           artist: "Ryan Haight",
           month: 7,
-          year: 2020
+          year: 2020,
+          span: 3,
         },
         {
           filename: "red_sqr.gif",
           artist: "Ryan Haight",
           month: 4,
-          year: 2020
+          year: 2020,
+          span: 2,
         },
         {
           filename: "Vancouvie_test.gif",
           artist: "Ryan Haight",
           month: 12,
-          year: 2019
+          year: 2019,
+          span: 2,
         },
         {
           filename: "Stairs.gif",

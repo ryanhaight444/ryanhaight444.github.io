@@ -20,20 +20,46 @@ body {
 }
 
 #app {
-width: 100%;
-height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 nav {
   position: fixed;
-  margin: 0;
   padding: 0;
-  margin-left:1rem;
-  margin-top: 1rem;
+  margin: 1rem;
+  /* display: flex; */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 1rem;
 }
 
 .section {
   margin-left: 150px;
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    /* font-size: 10px; */
+    position: relative;
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-column-gap: 0rem;
+  }
+
+  .section {
+    margin-left: 0;
+  }
 }
 
 #art img {
@@ -42,7 +68,9 @@ nav {
   /* -o-transition: filter 1s ease-in-out; */
   transition: filter .2s ease-in-out;
   width:auto;
-  height:300px;
+  height:15vw;
+  /* height: 100%; */
+  /* max-height: 15vw; */
   cursor: pointer;
 }
 
@@ -61,8 +89,9 @@ nav {
   align-items: center;
   margin: 0px;
   justify-content: center;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 0.5vw;
+  margin-bottom: 0.5vw;
+  object-fit: contain;
 }
 
 .imageCaption {
@@ -77,13 +106,19 @@ nav {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  /* width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense; */
+  /* grid-template-rows: repeat(auto-fill, 300px); */
+
 }
 
-.xout{ 
-  position:fixed;
-  top:15px;
-  right:30px;
-  width:20px;
+.xout { 
+  position: fixed;
+  top: 15px;
+  right: 0px;
+  width: 20px;
 }
 
 nav h1 {
@@ -91,8 +126,8 @@ nav h1 {
   margin-bottom: 5px;
 }
 
-.xout img{
-  width:40px;
+.xout img {
+  width: 40px;
   height:auto;
   position: relative;
   cursor: pointer;
@@ -106,6 +141,10 @@ nav a {
 
 .sectionLogo {
   width: 40px;
+}
+
+audio {
+  max-width: 100%;
 }
 
 #modal-overlay {
