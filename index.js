@@ -205,6 +205,10 @@ var app = new Vue({
           filename: "Colander.jpg",
           artist: "Sean Haight"
         },
+        {
+          filename: "BakerBeachSun.jpg"
+          artist: "Sean Haight"
+        },
       ]
     }
   },
