@@ -219,7 +219,7 @@ var app = new Vue({
           year: 2020
         },
       ],
-      paintings: [
+      acrylic: [
         {
           filename: "barn.jpg",
           artist: "Sean Haight"
@@ -232,7 +232,17 @@ var app = new Vue({
           filename: "Colander.jpg",
           artist: "Sean Haight"
         },
-      ]
+        {
+          filename: "BakerBeachSun.jpg",
+          artist: "Sean Haight"
+        },
+      ],
+       watercolor: [
+         {
+           filename: "SwampWaterColor.jpg",
+          artist: "Sean Haight"
+         }
+       ]
     }
   },
   methods: {

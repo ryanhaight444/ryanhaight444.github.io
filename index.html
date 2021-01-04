@@ -66,10 +66,10 @@
         ></art-item>
       </div>
 
-      <h2> - paintings</h2>
+      <h2> - acrylic </h2>
       <div class="grid">
         <art-item
-          v-for="(item, i) in paintings"
+          v-for="(item, i) in acrylic"
           :key="i"
           :folder="'paintings'"
           :item="item"
@@ -77,9 +77,16 @@
         ></art-item>
       </div>
 
-      <h2> - sketches</h2>
-      <img class="art" src="paintings/barn.jpg">
-
+      <h2> - watercolor </h2>
+      <div class="grid">
+        <art-item
+          v-for="(item, i) in watercolor"
+          :key="i"
+          :folder="'paintings'"
+          :item="item"
+          v-on:art-item-clicked="openOverlay"
+        ></art-item>
+      </div>
     </div>
 
     <!-- music -->
