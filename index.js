@@ -221,14 +221,6 @@ var app = new Vue({
       ],
       acrylic: [
         {
-          filename: "barn.jpg",
-          artist: "Sean Haight"
-        },
-        {
-          filename: "Rhododendron.jpg",
-          artist: "Sean Haight"
-        },
-        {
           filename: "Colander.jpg",
           artist: "Sean Haight"
         },
@@ -236,12 +228,84 @@ var app = new Vue({
           filename: "BakerBeachSun.jpg",
           artist: "Sean Haight"
         },
+        {
+          filename: "Rhododendron.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "barn.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "BakerBeachSunset.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "DunesInTheDistance.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "Mount_Pisgah.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "ATVHell.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "CraterLake.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "BayFromFragranceLake.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "GrahamMountainMeadow.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "ViewFromRyansApartment.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "MinnehahaMountain.jpg",
+          artist: "Sean Haight"
+        },
+        {
+          filename: "CapePerpetua.jpg",
+          artist: "Sean Haight"
+        },
       ],
        watercolor: [
          {
            filename: "SwampWaterColor.jpg",
           artist: "Sean Haight"
-         }
+         },
+         {
+          filename: "SeanSelfPortrait.jpg",
+         artist: "Sean Haight"
+        },
+        {
+          filename: "BakerBeach.jpg",
+         artist: "Sean Haight"
+        },
+        {
+          filename: "Douglas_Fir.jpg",
+         artist: "Sean Haight"
+        },
+        {
+          filename: "Bigleaf_Maple.jpg",
+         artist: "Sean Haight"
+        },
+        {
+          filename: "Oregon_Oak.jpg",
+         artist: "Sean Haight"
+        },
+        {
+          filename: "Pacific_Madrone.jpg",
+         artist: "Sean Haight"
+        }
        ]
     }
   },
