@@ -276,6 +276,10 @@ var app = new Vue({
           filename: "CapePerpetua.jpg",
           artist: "Sean Haight"
         },
+        {
+          filename: "SmokeInSpokane.jpg",
+          artist: "Sean Haight"
+        },
       ],
        watercolor: [
          {
