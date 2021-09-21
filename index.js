@@ -4,7 +4,7 @@ Vue.component('art-item', {
   props: ['folder', 'item'],
   computed: {
     ratio() {
-      return this.$refs.image.clientWidth / this.$refs.image.clientHeight;
+      return this.$refs.image.clientWidth / this.$refs.image.clientHeight +.001;
     },
   },
   methods: {
@@ -18,7 +18,7 @@ Vue.component('art-item', {
     <img ref="image" :src="folder + '/' + item.filename">
     <div class="imageCaption">
       <p> {{ item.artist }} </p>
-      <p v-if="item.year!==undefined">({{ item.year }})</p>
+      <p v-if="item.year!==undefined">{{ item.year }}</p>
     </div>
   </div>`
 })
@@ -27,6 +27,7 @@ Vue.component('modal-overlay', {
   props: ['folder', 'item', 'ratio'],
   data() {
     return {
+      metadataVisible: false,
       storedHeight: 1,
       storedWidth: 1,
     }
@@ -51,11 +52,17 @@ Vue.component('modal-overlay', {
         resizedHeight = this.height();
         resizedWidth = this.ratio * resizedHeight;
       }
+      console.log(resizedHeight + "ran offset");
       let offset = resizedWidth / 2;
       return offset;
     },
   },
   methods: {
+
+    showMetadata(){
+        this.metadataVisible = true;
+    },
+
     onOverlayClick() {
       this.$emit('overlay-clicked');
     },
@@ -77,6 +84,7 @@ Vue.component('modal-overlay', {
       if (this.$refs.modalImage !== undefined) {
         return this.$refs.modalImage.clientHeight;
       } else {
+        console.log('No Obj');
         return -1;
       }
     },
@@ -84,13 +92,18 @@ Vue.component('modal-overlay', {
   },
   template: `<div  id="modal-overlay">
       <img ref="modalImage" :src="folder !== '' ? folder + '/' + item.filename : ''">
-      <div class="metadata" :style="{'margin-left': offset + 'px'}">
-        <p>{{ item.artist }}</p>
-        <p>{{ item.year }}</p>
-        <p>Links go here?</p>
+      <div v-show = "metadataVisible" class="metadata" :style="{'margin-left': offset + 'px'}"  @mouseleave = "metadataVisible = false">
+        <p style = "font-weight:bold">{{item.title}}</p>
+        <hr> </hr>
+        <p>{{ item.artist }}, {{ item.year }}</p>
+        <p>{{item.medium}}, {{item.size}}</p>
+        <p style = "position:absolute; bottom:0; left:2rem; font-size:1rem"> {{item.footnote}} </p>
       </div>
       <div class="xout" @click="onOverlayClick" >
         <img SRC="logos/x.gif">
+      </div>
+      <div class="metadataButton" @mouseover = "metadataVisible = true" >
+        <img SRC="logos/questionmark.gif">
       </div>
     </div>
   </div>`
@@ -222,63 +235,154 @@ var app = new Vue({
       acrylic: [
         {
           filename: "Colander.jpg",
-          artist: "Sean Haight"
+          title: "Colander",
+          artist: "Sean Haight",
+          month: 8, 
+          year: 2017,
+          medium:"acrylic on canvas",
+          size: "12 x 10 in",
+          footnote: "not for sale"
         },
         {
           filename: "BakerBeachSun.jpg",
-          artist: "Sean Haight"
+          title: "Sunset at Baker Beach No. 1",
+          artist: "Sean Haight",
+          month: 12,
+          year: 2020,
+          medium:"acrylic on canvas",
+          size: "12 x 10 in",
+          footnote: "not for sale"
         },
         {
           filename: "Rhododendron.jpg",
-          artist: "Sean Haight"
+          title: "Rhododendron Flower",
+          artist: "Sean Haight", 
+          month: 12, 
+          year: 2020,
+          medium:"acrylic on canvas",
+          size: "12 x 10 in",
+          footnote: "not for sale"
         },
         {
           filename: "barn.jpg",
-          artist: "Sean Haight"
+          title: "The Barn",
+          artist: "Sean Haight",
+          month: 1, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size: "12 x 10 in",
+          footnote: "not for sale"
         },
         {
           filename: "BakerBeachSunset.jpg",
-          artist: "Sean Haight"
+          title: "Sunset at Baker Beach No. 2",
+          artist: "Sean Haight",
+          month: 1,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "DunesInTheDistance.jpg",
-          artist: "Sean Haight"
+          title: "Dunes at Baker Beach",
+          artist: "Sean Haight",
+          month: 2, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "Mount_Pisgah.jpg",
-          artist: "Sean Haight"
+          title: "Looking West from Mt. Pisgah",
+          artist: "Sean Haight",
+          month: 3,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "ATVHell.jpg",
-          artist: "Sean Haight"
+          title: "Sand Lake Recreation Area",
+          artist: "Sean Haight",
+          month:5,
+          year:2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
+
         },
         {
           filename: "CraterLake.jpg",
-          artist: "Sean Haight"
+          title: "Wizard Island",
+          artist: "Sean Haight",
+          month: 6,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "BayFromFragranceLake.jpg",
-          artist: "Sean Haight"
+          title: "Hiking to Fragrance Lake",
+          artist: "Sean Haight",
+          month: 7, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "GrahamMountainMeadow.jpg",
-          artist: "Sean Haight"
+          title: "Graham Mountain Meadow",
+          artist: "Sean Haight",
+          month: 8, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "ViewFromRyansApartment.jpg",
-          artist: "Sean Haight"
+          title: "Seattle in Summer",
+          artist: "Sean Haight",
+          month: 8,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "MinnehahaMountain.jpg",
-          artist: "Sean Haight"
+          title: "Looking West from Beacon Hill",
+          artist: "Sean Haight",
+          month: 8,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
         {
           filename: "CapePerpetua.jpg",
-          artist: "Sean Haight"
+          title: "Cape Perpetua",
+          artist: "Sean Haight",
+          month: 9,
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase"
         },
         {
           filename: "SmokeInSpokane.jpg",
-          artist: "Sean Haight"
+          title: "Smokey Afternoon in Spokane Valley",
+          artist: "Sean Haight",
+          month: 9, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"12 x 10 in",
+          footnote: "sold"
         },
       ],
        watercolor: [
@@ -322,6 +426,8 @@ var app = new Vue({
       this.overlayFolder = event[1];
       this.overlayRatio = event[2];
       this.showOverlay = true;
+
+      console.log("displaying art");
     }
   }
 })
