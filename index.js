@@ -240,7 +240,7 @@ var app = new Vue({
           month: 8, 
           year: 2017,
           medium:"acrylic on canvas",
-          size: "12 x 10 in",
+          size: "14 x 11 in",
           footnote: "not for sale"
         },
         {
@@ -250,7 +250,7 @@ var app = new Vue({
           month: 12,
           year: 2020,
           medium:"acrylic on canvas",
-          size: "12 x 10 in",
+          size: "6 x 6 in",
           footnote: "not for sale"
         },
         {
@@ -260,8 +260,8 @@ var app = new Vue({
           month: 12, 
           year: 2020,
           medium:"acrylic on canvas",
-          size: "12 x 10 in",
-          footnote: "not for sale"
+          size: "6 x 6 in",
+          footnote: "gave it to mom"
         },
         {
           filename: "barn.jpg",
@@ -270,8 +270,8 @@ var app = new Vue({
           month: 1, 
           year: 2021,
           medium:"acrylic on canvas",
-          size: "12 x 10 in",
-          footnote: "not for sale"
+          size: "6 x 6 in",
+          footnote: "gave it to grandma"
         },
         {
           filename: "BakerBeachSunset.jpg",
@@ -280,7 +280,7 @@ var app = new Vue({
           month: 1,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"14 x 11 in",
           footnote: "sold"
         },
         {
@@ -290,7 +290,7 @@ var app = new Vue({
           month: 2, 
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"6 x 6 in",
           footnote: "sold"
         },
         {
@@ -300,7 +300,7 @@ var app = new Vue({
           month: 3,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
         },
         {
@@ -310,7 +310,7 @@ var app = new Vue({
           month:5,
           year:2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
 
         },
@@ -321,7 +321,7 @@ var app = new Vue({
           month: 6,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
         },
         {
@@ -331,7 +331,7 @@ var app = new Vue({
           month: 7, 
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"20 x 24 in",
           footnote: "sold"
         },
         {
@@ -341,7 +341,7 @@ var app = new Vue({
           month: 8, 
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
         },
         {
@@ -351,7 +351,7 @@ var app = new Vue({
           month: 8,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"6 x 6 in",
           footnote: "sold"
         },
         {
@@ -361,7 +361,7 @@ var app = new Vue({
           month: 8,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
         },
         {
@@ -371,7 +371,7 @@ var app = new Vue({
           month: 9,
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"6 x 6 in",
           footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase"
         },
         {
@@ -381,38 +381,80 @@ var app = new Vue({
           month: 9, 
           year: 2021,
           medium:"acrylic on canvas",
-          size:"12 x 10 in",
+          size:"8 x 10 in",
           footnote: "sold"
         },
       ],
        watercolor: [
          {
-           filename: "SwampWaterColor.jpg",
-          artist: "Sean Haight"
+          filename: "SwampWaterColor.jpg",
+          title:"Swamp Stock Photo",
+          artist: "Sean Haight",
+          month: 12,
+          year: 2020,
+          medium: "watercolor on paper",
+          size:"6 x 8 in",
+          footnote: "not for sale"
          },
          {
           filename: "SeanSelfPortrait.jpg",
-         artist: "Sean Haight"
+          title: "Self Portrait",
+          artist: "Sean Haight",
+          month: 9, 
+          year: 2021, 
+          medium: "watercolor on paper", 
+          size:"6 x 8 in",
+          footnote: "not for sale",
         },
         {
           filename: "BakerBeach.jpg",
-         artist: "Sean Haight"
+          title:"Baker Beach Inlet",
+          artist: "Sean Haight",
+          month: 1, 
+          year: 2021,
+          medium: "watercolor on paper", 
+          size:"6 x 8 in",
+          footnote: "not for sale",
         },
         {
           filename: "Douglas_Fir.jpg",
-         artist: "Sean Haight"
+          title: "Douglas Fir",
+          artist: "Sean Haight",
+          month: 7,
+          year: 2021, 
+          medium: "watercolor on paper", 
+          size:"6 x 8 in",
+          footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase",        
         },
         {
           filename: "Bigleaf_Maple.jpg",
-         artist: "Sean Haight"
+          title: "Bigleaf Maple",
+          artist: "Sean Haight",
+          month: 8,
+          year: 2021, 
+          medium: "watercolor on paper", 
+          size:"6 x 8 in",
+          footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase",    
         },
         {
           filename: "Oregon_Oak.jpg",
-         artist: "Sean Haight"
+          title: "Oregon Oak",
+         artist: "Sean Haight",
+         month: 8,
+         year: 2021, 
+         medium: "watercolor on paper", 
+         size:"6 x 8 in",
+         footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase",   
         },
         {
           filename: "Pacific_Madrone.jpg",
-         artist: "Sean Haight"
+          title: "Pacific Madrone",
+          artist: "Sean Haight",
+          month: 7,
+          year: 2021, 
+          medium: "watercolor on paper", 
+          size:"6 x 8 in",
+          footnote: "contact Sean Haight at seanhaight1@gmail.com to purchase",   
         }
        ]
     }
