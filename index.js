@@ -390,6 +390,16 @@ var app = new Vue({
           medium:"acrylic on canvas",
           size:"8 x 10 in",
           footnote: "sold"
+        },        
+        {
+          filename: "LunchAtCalebMarsh.jpg",
+          title: "LunchAtCalebMarsh",
+          artist: "Sean Haight",
+          month: 9, 
+          year: 2021,
+          medium:"acrylic on canvas",
+          size:"8 x 10 in",
+          footnote: "$200 + S&H - contact Sean Haight at seanhaight1@gmail.com to purchase"
         },
       ],
        watercolor: [
