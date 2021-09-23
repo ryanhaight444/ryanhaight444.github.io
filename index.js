@@ -95,8 +95,10 @@ Vue.component('modal-overlay', {
       <div v-show = "metadataVisible" class="metadata" :style="{'margin-left': offset + 'px'}"  @mouseleave = "metadataVisible = false">
         <p style = "font-weight:bold">{{item.title}}</p>
         <hr> </hr>
-        <p>{{ item.artist }}, {{ item.year }}</p>
-        <p>{{item.medium}}, {{item.size}}</p>
+        <p style = "width: 40%; float:left;">{{ item.artist }} </p> 
+        <p style = "width:40%; float:right; text-align:right"> {{ item.year }}</p>
+        <p style = "float:left;">{{item.medium}} </p>
+        <p style = "width:40%; float:right; text-align:right"> {{item.size}}</p>
         <p style = "position:absolute; bottom:0; left:2rem; font-size:1rem"> {{item.footnote}} </p>
       </div>
       <div class="xout" @click="onOverlayClick" >
