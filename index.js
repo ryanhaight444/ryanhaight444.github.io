@@ -63,6 +63,10 @@ Vue.component('modal-overlay', {
         this.metadataVisible = true;
     },
 
+    toggleMetadata() {
+        this.metadataVisible = !this.metadataVisible;
+    },
+
     onOverlayClick() {
       this.$emit('overlay-clicked');
     },
@@ -92,20 +96,21 @@ Vue.component('modal-overlay', {
   },
   template: `<div  id="modal-overlay">
       <img ref="modalImage" :src="folder !== '' ? folder + '/' + item.filename : ''">
-      <div v-show = "metadataVisible" class="metadata" :style="{'margin-left': offset + 'px'}"  @mouseleave = "metadataVisible = false">
+      <div v-show = "metadataVisible" class="metadata">
         <p style = "font-weight:bold">{{item.title}}</p>
         <hr> </hr>
         <p style = "width: 40%; float:left;">{{ item.artist }} </p> 
         <p style = "width:40%; float:right; text-align:right"> {{ item.year }}</p>
         <p style = "float:left;">{{item.medium}} </p>
         <p style = "width:40%; float:right; text-align:right"> {{item.size}}</p>
-        <p style = "position:absolute; bottom:0; left:2rem; font-size:1rem"> {{item.footnote}} </p>
+        <hr style = "width:90%;  position: absolute;  bottom: 3rem; "> </hr>
+        <p style = "position:absolute; bottom:0; left:2rem; font-size:1rem">{{item.footnote}} </p>
       </div>
-      <div class="xout" @click="onOverlayClick" >
+      <div class="xout" @click="onOverlayClick(); metadataVisible = false"  >
         <img SRC="logos/x.gif">
       </div>
-      <div class="metadataButton" @mouseover = "metadataVisible = true" >
-        <img SRC="logos/questionmark.gif">
+      <div class="metadataButton" @click="toggleMetadata" >
+        <img SRC="logos/questionmark.gif" style = "width:50px">
       </div>
     </div>
   </div>`
